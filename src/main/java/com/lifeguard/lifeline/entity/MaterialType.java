@@ -1,4 +1,12 @@
 package com.lifeguard.lifeline.entity;
 
-public class MaterialType {
+import lombok.Data;
+
+import javax.persistence.Entity;
+
+@Data
+@Entity(name = "MATERIAL_TYPE")
+public class MaterialType extends Base{
+    String materialType;
+    String materialTypeCode;
 }

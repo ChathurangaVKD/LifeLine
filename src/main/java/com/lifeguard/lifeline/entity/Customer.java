@@ -3,7 +3,10 @@ package com.lifeguard.lifeline.entity;
 import lombok.Data;
 import org.hibernate.annotations.NaturalId;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,11 +16,24 @@ public class Customer extends Base{
     String customerName;
     @NaturalId
     String registerNo;
-    String registerdAddress;
-    String communicationAddress;
-//    List<String> mobileNo = new ArrayList<>();;
-//    List<String> email = new ArrayList<>();;
-//    List<String> fax = new ArrayList<>();;
-    String customerType;
     String currency;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    UserType customerType;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    Address registerAddress;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    Address communicationAddress;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    List<MobileNo> mobileNo = new ArrayList<>();
+
+    @OneToMany(cascade = CascadeType.ALL)
+    List<Email> email = new ArrayList<>();
+
+    @OneToMany(cascade = CascadeType.ALL)
+    List<Fax> fax = new ArrayList<>();
+
 }

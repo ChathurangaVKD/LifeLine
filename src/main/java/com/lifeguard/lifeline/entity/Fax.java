@@ -1,4 +1,11 @@
 package com.lifeguard.lifeline.entity;
 
-public class Fax {
+import lombok.Data;
+
+import javax.persistence.Entity;
+
+@Data
+@Entity(name = "FAX")
+public class Fax extends Base{
+    String fax;
 }
