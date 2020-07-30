@@ -8,6 +8,7 @@ import javax.persistence.*;
 @Data
 @Entity(name = "EMPLOYEE")
 public class Employee extends Base{
+
     @NaturalId
     String nic;
     String firstName;
@@ -19,7 +20,7 @@ public class Employee extends Base{
     @ManyToOne(cascade = {
             CascadeType.DETACH,
             CascadeType.REFRESH}, fetch = FetchType.EAGER)
-    UserType userRole;
+    UserType userType;
 
     @OneToOne(cascade = CascadeType.ALL)
     Address address;

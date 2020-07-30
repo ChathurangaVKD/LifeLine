@@ -3,23 +3,19 @@ package com.lifeguard.lifeline.entity;
 import lombok.Data;
 import org.hibernate.annotations.NaturalId;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Data
 @Entity(name = "CUSTOMER")
 public class Customer extends Base{
+
     String customerName;
     @NaturalId
     String registerNo;
     String currency;
-
-    @OneToOne(cascade = CascadeType.ALL)
-    UserType customerType;
+    String customerType;
 
     @OneToOne(cascade = CascadeType.ALL)
     Address registerAddress;

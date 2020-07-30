@@ -3,6 +3,7 @@ package com.lifeguard.lifeline.impl.service;
 import com.lifeguard.lifeline.entity.Supplier;
 import com.lifeguard.lifeline.repo.SupplierRepo;
 import com.lifeguard.lifeline.service.SupplierService;
+import com.lifeguard.lifeline.service.UserTypeService;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityNotFoundException;
@@ -12,13 +13,16 @@ import java.util.List;
 public class SupplierServiceImpl implements SupplierService {
 
     private SupplierRepo supplierRepo;
+    private UserTypeService userTypeService;
 
-    public SupplierServiceImpl(SupplierRepo supplierRepo){
+    public SupplierServiceImpl(SupplierRepo supplierRepo, UserTypeService userTypeService){
         this.supplierRepo = supplierRepo;
+        this.userTypeService = userTypeService;
     }
 
     @Override
     public Supplier createSupplier(Supplier supplier) {
+        this.persist(supplier);
         return supplierRepo.save(supplier);
     }
 
@@ -35,5 +39,9 @@ public class SupplierServiceImpl implements SupplierService {
     @Override
     public List<Supplier> getAllSupplier() {
         return supplierRepo.findAll();
+    }
+
+    private Supplier persist(Supplier supplier){
+        return supplier;
     }
 }
