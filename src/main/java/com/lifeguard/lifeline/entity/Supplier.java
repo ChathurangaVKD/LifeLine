@@ -3,10 +3,7 @@ package com.lifeguard.lifeline.entity;
 import lombok.Data;
 import org.hibernate.annotations.NaturalId;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,7 +14,12 @@ public class Supplier extends Base{
     String supplierName;
     @NaturalId
     String registerNo;
-    String supplierType;
+
+    @ManyToOne(cascade = {
+            CascadeType.DETACH,
+            CascadeType.REFRESH}, fetch = FetchType.EAGER)
+    UserType supplierType;
+
     String currency;
     Integer creditPeriod;
 

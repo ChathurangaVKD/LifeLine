@@ -41,5 +41,8 @@ public abstract class Base {
     @Version
     Long version;
 
+    @JsonIgnore
+    @ApiModelProperty(required = false, hidden = true)
+    @Column(name = "STATUS")
     String status;
 }

@@ -2,6 +2,7 @@ package com.lifeguard.lifeline.impl.service;
 
 import com.lifeguard.lifeline.entity.Customer;
 import com.lifeguard.lifeline.entity.Email;
+import com.lifeguard.lifeline.entity.UserType;
 import com.lifeguard.lifeline.repo.CustomerRepo;
 import com.lifeguard.lifeline.service.CustomerService;
 import com.lifeguard.lifeline.service.EmailService;
@@ -61,10 +62,10 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     private Customer persist(Customer customer){
-//        if (customer.getUserType() != null && customer.getUserType().getId() != null){
-//            UserType userType = userTypeService.getUserTypeById(customer.getUserType().getId());
-//            customer.setUserType(userType);
-//        }
+        if (customer.getCustomerType() != null && customer.getCustomerType().getId() != null){
+            UserType userType = userTypeService.getUserTypeById(customer.getCustomerType().getId());
+            customer.setCustomerType(userType);
+        }
 
         return customer;
     }

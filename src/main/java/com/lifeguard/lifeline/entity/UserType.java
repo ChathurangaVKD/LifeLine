@@ -10,5 +10,6 @@ import javax.persistence.Entity;
 @Entity(name = "USER_TYPE")
 public class UserType extends Base {
     @NaturalId
+    String userTypeCode;
     String userTypename;
 }

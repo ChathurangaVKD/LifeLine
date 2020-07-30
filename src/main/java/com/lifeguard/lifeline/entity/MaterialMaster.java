@@ -3,10 +3,7 @@ package com.lifeguard.lifeline.entity;
 import lombok.Data;
 import org.hibernate.annotations.NaturalId;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,19 +12,22 @@ import java.util.List;
 public class MaterialMaster extends Base{
 
     String materialName;
+
     @NaturalId
     String materialCode;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = {
+            CascadeType.DETACH,
+            CascadeType.REFRESH}, fetch = FetchType.EAGER)
     MaterialType materialType;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    List<Supplier> suppliers = new ArrayList<>();
+//    @OneToMany(cascade = CascadeType.ALL)
+//    List<Supplier> suppliers = new ArrayList<>();
+//
+//    @OneToMany(cascade = CascadeType.ALL)
+//    List<QualityDetails> qualityDetails = new ArrayList<>();
 
-    @OneToMany(cascade = CascadeType.ALL)
-    List<QualityDetails> qualityDetails = new ArrayList<>();
-
-    @OneToMany(cascade = CascadeType.ALL)
-    List<ProductMaster> products = new ArrayList<>();
+//    @OneToMany(cascade = CascadeType.ALL)
+//    List<ProductMaster> products = new ArrayList<>();
 
 }

@@ -15,7 +15,11 @@ public class Customer extends Base{
     @NaturalId
     String registerNo;
     String currency;
-    String customerType;
+
+    @ManyToOne(cascade = {
+            CascadeType.DETACH,
+            CascadeType.REFRESH}, fetch = FetchType.EAGER)
+    UserType customerType;
 
     @OneToOne(cascade = CascadeType.ALL)
     Address registerAddress;

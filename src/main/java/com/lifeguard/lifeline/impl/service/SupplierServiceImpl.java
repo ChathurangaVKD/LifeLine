@@ -1,6 +1,7 @@
 package com.lifeguard.lifeline.impl.service;
 
 import com.lifeguard.lifeline.entity.Supplier;
+import com.lifeguard.lifeline.entity.UserType;
 import com.lifeguard.lifeline.repo.SupplierRepo;
 import com.lifeguard.lifeline.service.SupplierService;
 import com.lifeguard.lifeline.service.UserTypeService;
@@ -42,6 +43,11 @@ public class SupplierServiceImpl implements SupplierService {
     }
 
     private Supplier persist(Supplier supplier){
+        if (supplier.getSupplierType() != null && supplier.getSupplierType().getId() != null){
+            UserType userType = userTypeService.getUserTypeById(supplier.getSupplierType().getId());
+            supplier.setSupplierType(userType);
+        }
+
         return supplier;
     }
 }
