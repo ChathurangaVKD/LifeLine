@@ -11,6 +11,8 @@ public class Employee extends Base{
 
     @NaturalId
     String nic;
+    @NaturalId
+    String userName;
     String firstName;
     String lastName;
     String birthDay;
