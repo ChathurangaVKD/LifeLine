@@ -8,9 +8,7 @@ import javax.persistence.Entity;
 @Entity(name = "ADDRESS")
 public class Address extends Base{
     String no;
-    String lane1;
-    String lane2;
-    String lane3;
+    String lane;
     String city;
     Long postalCode;
     String country;
