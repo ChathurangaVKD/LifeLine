@@ -15,7 +15,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     private EmployeeRepo employeeRepo;
     private UserTypeService userTypeService;
 
-    public EmployeeServiceImpl(EmployeeRepo employeeRepo, UserTypeService userTypeService){
+    public EmployeeServiceImpl(EmployeeRepo employeeRepo, UserTypeService userTypeService) {
         this.employeeRepo = employeeRepo;
         this.userTypeService = userTypeService;
     }
@@ -41,14 +41,14 @@ public class EmployeeServiceImpl implements EmployeeService {
         return null;
     }
 
-    private Employee persist(Employee employee){
+    private Employee persist(Employee employee) {
 
-      if (employee.getUserType() != null && employee.getUserType().getId() != null){
-          UserType userType = userTypeService.getUserTypeById(employee.getUserType().getId());
-          employee.setUserType(userType);
-      }
+        if (employee.getUserType() != null && employee.getUserType().getId() != null) {
+            UserType userType = userTypeService.getUserTypeById(employee.getUserType().getId());
+            employee.setUserType(userType);
+        }
 
-      return employee;
+        return employee;
     }
 
 }

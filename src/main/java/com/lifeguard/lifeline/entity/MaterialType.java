@@ -7,7 +7,7 @@ import javax.persistence.Entity;
 
 @Data
 @Entity(name = "MATERIAL_TYPE")
-public class MaterialType extends Base{
+public class MaterialType extends Base {
 
     String materialType;
     @NaturalId

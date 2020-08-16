@@ -13,7 +13,7 @@ public class UserTypeServiceImpl implements UserTypeService {
 
     private UserTypeRepo userTypeRepo;
 
-    public UserTypeServiceImpl(UserTypeRepo userTypeRepo){
+    public UserTypeServiceImpl(UserTypeRepo userTypeRepo) {
         this.userTypeRepo = userTypeRepo;
     }
 

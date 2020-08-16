@@ -16,22 +16,22 @@ public class MaterialMasterController {
     }
 
     @PostMapping(path = "material/create")
-    public MaterialMaster create(@RequestBody MaterialMaster material){
+    public MaterialMaster create(@RequestBody MaterialMaster material) {
         return materialMasterService.create(material);
     }
 
     @GetMapping(path = "material/get/{materialId}")
-    public MaterialMaster get(@PathVariable("materialId") Long materialId){
+    public MaterialMaster get(@PathVariable("materialId") Long materialId) {
         return materialMasterService.get(materialId);
     }
 
     @GetMapping(path = "material/get-all")
-    public List<MaterialMaster> getAll(){
+    public List<MaterialMaster> getAll() {
         return materialMasterService.getAll();
     }
 
     @DeleteMapping(path = "material/delete/{materialId}")
-    public void delete(@PathVariable("materialId") long materialId){
+    public void delete(@PathVariable("materialId") long materialId) {
         materialMasterService.delete(materialId);
     }
 

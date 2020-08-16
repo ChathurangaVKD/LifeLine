@@ -16,22 +16,22 @@ public class SaleMasterController {
     }
 
     @PostMapping(path = "/Sale/create")
-    public SaleMaster create(@RequestBody SaleMaster saleDetail){
+    public SaleMaster create(@RequestBody SaleMaster saleDetail) {
         return saleMasterService.create(saleDetail);
     }
 
     @GetMapping(path = "/sale/get-sale/{saleId}")
-    public SaleMaster get(@PathVariable("saleId") Long saleId){
+    public SaleMaster get(@PathVariable("saleId") Long saleId) {
         return saleMasterService.get(saleId);
     }
 
     @GetMapping(path = "/sale/get-all-sale")
-    public List<SaleMaster> getAll(){
+    public List<SaleMaster> getAll() {
         return saleMasterService.getAll();
     }
 
     @DeleteMapping(path = "/sale/delete/{saleId}")
-    public void delete(@PathVariable("saleId") Long saleId){
+    public void delete(@PathVariable("saleId") Long saleId) {
         saleMasterService.delete(saleId);
     }
 }

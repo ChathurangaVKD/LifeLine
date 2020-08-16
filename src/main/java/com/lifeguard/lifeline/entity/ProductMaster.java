@@ -8,7 +8,7 @@ import javax.persistence.ManyToOne;
 
 @Data
 @Entity(name = "PRODUCT_MASTER")
-public class ProductMaster extends Base{
+public class ProductMaster extends Base {
 
     String productName;
 

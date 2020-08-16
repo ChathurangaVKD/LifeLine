@@ -9,7 +9,7 @@ import java.util.List;
 
 @Data
 @Entity(name = "MATERIAL_MASTER")
-public class MaterialMaster extends Base{
+public class MaterialMaster extends Base {
 
     String materialName;
 

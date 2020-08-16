@@ -8,7 +8,7 @@ import javax.persistence.OneToOne;
 
 @Data
 @Entity(name = "SALE_MASTER")
-public class SaleMaster extends Base{
+public class SaleMaster extends Base {
 
     @OneToOne(cascade = CascadeType.ALL)
     Customer customer;

@@ -11,27 +11,27 @@ public class EmployeeController {
 
     private EmployeeService employeeService;
 
-    public EmployeeController(EmployeeService employeeService){
+    public EmployeeController(EmployeeService employeeService) {
         this.employeeService = employeeService;
     }
 
     @PostMapping(path = "/user/create-employee")
-    public Employee createEmployee(@RequestBody Employee employee){
+    public Employee createEmployee(@RequestBody Employee employee) {
         return employeeService.createEmployee(employee);
     }
 
     @GetMapping(path = "/user/get-employee/{employeeId}")
-    public Employee getEmployee(@PathVariable("employeeId") Long employeeId){
+    public Employee getEmployee(@PathVariable("employeeId") Long employeeId) {
         return employeeService.getEmployee(employeeId);
     }
 
     @GetMapping(path = "/user/get-all-employee")
-    public List<Employee> getAllEmployee(){
+    public List<Employee> getAllEmployee() {
         return employeeService.getAllEmployee();
     }
 
     @DeleteMapping(path = "/user/delete-employee")
-    public void deleteEmployee(@PathVariable("employeeId") Long employeeId){
+    public void deleteEmployee(@PathVariable("employeeId") Long employeeId) {
         employeeService.deleteEmployee(employeeId);
     }
 }

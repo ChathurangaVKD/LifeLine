@@ -16,7 +16,7 @@ public class SupplierServiceImpl implements SupplierService {
     private SupplierRepo supplierRepo;
     private UserTypeService userTypeService;
 
-    public SupplierServiceImpl(SupplierRepo supplierRepo, UserTypeService userTypeService){
+    public SupplierServiceImpl(SupplierRepo supplierRepo, UserTypeService userTypeService) {
         this.supplierRepo = supplierRepo;
         this.userTypeService = userTypeService;
     }
@@ -42,8 +42,8 @@ public class SupplierServiceImpl implements SupplierService {
         return supplierRepo.findAll();
     }
 
-    private Supplier persist(Supplier supplier){
-        if (supplier.getSupplierType() != null && supplier.getSupplierType().getId() != null){
+    private Supplier persist(Supplier supplier) {
+        if (supplier.getSupplierType() != null && supplier.getSupplierType().getId() != null) {
             UserType userType = userTypeService.getUserTypeById(supplier.getSupplierType().getId());
             supplier.setSupplierType(userType);
         }

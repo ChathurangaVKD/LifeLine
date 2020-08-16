@@ -7,7 +7,7 @@ import javax.persistence.Entity;
 
 @Data
 @Entity(name = "QUALITY_DETAILS")
-public class QualityDetails extends Base{
+public class QualityDetails extends Base {
 
     String qualityParameterName;
     @NaturalId

@@ -21,17 +21,17 @@ public class UserTypeController {
     }
 
     @GetMapping(path = "/user/get-all-user-type")
-    public List<UserType> getAllUserType(){
+    public List<UserType> getAllUserType() {
         return userTypeService.getAllUserType();
     }
 
     @GetMapping(path = "/user/get-user-type-by-id/{userTypeId}")
-    public UserType getUserTypeById(@PathVariable("userTypeId") Long userTypeId){
+    public UserType getUserTypeById(@PathVariable("userTypeId") Long userTypeId) {
         return userTypeService.getUserTypeById(userTypeId);
     }
 
     @DeleteMapping(path = "/user/delete-user-type/{userTypeId}")
-    public void deleteUserType(@PathVariable("userTypeId") Long userTypeId){
+    public void deleteUserType(@PathVariable("userTypeId") Long userTypeId) {
         userTypeService.deleteUserType(userTypeId);
     }
 }

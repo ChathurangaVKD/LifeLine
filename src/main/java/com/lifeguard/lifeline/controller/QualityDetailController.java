@@ -16,22 +16,22 @@ public class QualityDetailController {
     }
 
     @PostMapping(path = "/quality/create")
-    public QualityDetails create(@RequestBody QualityDetails qualityDetails){
+    public QualityDetails create(@RequestBody QualityDetails qualityDetails) {
         return qualityService.create(qualityDetails);
     }
 
     @GetMapping(path = "/quality/get/{qualityId}")
-    public QualityDetails get(@PathVariable("qualityId") Long qualityId){
+    public QualityDetails get(@PathVariable("qualityId") Long qualityId) {
         return qualityService.get(qualityId);
     }
 
     @GetMapping(path = "/quality/get-all")
-    public List<QualityDetails> getAll(){
+    public List<QualityDetails> getAll() {
         return qualityService.getAll();
     }
 
     @DeleteMapping(path = "/quality/delete/{qualityId}")
-    public void delete(@PathVariable("qualityId") Long qualityId){
+    public void delete(@PathVariable("qualityId") Long qualityId) {
         qualityService.delete(qualityId);
     }
 }

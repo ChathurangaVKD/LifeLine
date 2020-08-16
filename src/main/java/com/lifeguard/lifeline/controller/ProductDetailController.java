@@ -16,22 +16,22 @@ public class ProductDetailController {
     }
 
     @PostMapping(path = "/Product/create-product-detail")
-    public ProductDetail create(@RequestBody ProductDetail productDetail){
+    public ProductDetail create(@RequestBody ProductDetail productDetail) {
         return productDetailService.create(productDetail);
     }
 
     @GetMapping(path = "/product/get-product-detail/{productId}")
-    public ProductDetail get(@PathVariable("productId") Long productId){
+    public ProductDetail get(@PathVariable("productId") Long productId) {
         return productDetailService.get(productId);
     }
 
     @GetMapping(path = "/product/get-all-product-detail")
-    public List<ProductDetail> getAll(){
+    public List<ProductDetail> getAll() {
         return productDetailService.getAll();
     }
 
     @DeleteMapping(path = "/product/delete-product-detail/{productDetailId}")
-    public void delete(@PathVariable("productDetailId") Long productDetailId){
+    public void delete(@PathVariable("productDetailId") Long productDetailId) {
         productDetailService.delete(productDetailId);
     }
 }

@@ -6,6 +6,6 @@ import javax.persistence.Entity;
 
 @Data
 @Entity(name = "MOBILE_NO")
-public class MobileNo extends Base{
+public class MobileNo extends Base {
     String mobileNo;
 }

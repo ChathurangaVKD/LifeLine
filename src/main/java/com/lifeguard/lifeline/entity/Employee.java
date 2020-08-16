@@ -7,7 +7,7 @@ import javax.persistence.*;
 
 @Data
 @Entity(name = "EMPLOYEE")
-public class Employee extends Base{
+public class Employee extends Base {
 
     @NaturalId
     String nic;

@@ -9,7 +9,7 @@ import java.util.List;
 
 @Data
 @Entity(name = "CUSTOMER")
-public class Customer extends Base{
+public class Customer extends Base {
 
     String customerName;
     @NaturalId

@@ -16,17 +16,17 @@ public class MaterialTypeController {
     }
 
     @PostMapping(path = "/material/create-material-type")
-    public MaterialType create(@RequestBody MaterialType materialType){
+    public MaterialType create(@RequestBody MaterialType materialType) {
         return materialTypeService.create(materialType);
     }
 
     @GetMapping(path = "/material/get-all-material")
-    public List<MaterialType> getAll(){
+    public List<MaterialType> getAll() {
         return materialTypeService.getAll();
     }
 
     @DeleteMapping(path = "/material/delete-material-type/{materialTypeId}")
-    public void delete(@PathVariable("materialTypeId") Long materialTypeId){
+    public void delete(@PathVariable("materialTypeId") Long materialTypeId) {
         materialTypeService.delete(materialTypeId);
     }
 }

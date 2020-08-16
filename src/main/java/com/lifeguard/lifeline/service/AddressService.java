@@ -6,8 +6,11 @@ import java.util.List;
 
 public interface AddressService {
     Address create(Address address);
+
     Address get(Long addressId);
+
     void delete(Long addressId);
+
     List<Address> getAll();
 
 }

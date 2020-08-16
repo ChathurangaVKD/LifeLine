@@ -6,7 +6,7 @@ import javax.persistence.Entity;
 
 @Data
 @Entity(name = "ADDRESS")
-public class Address extends Base{
+public class Address extends Base {
     String no;
     String lane;
     String city;

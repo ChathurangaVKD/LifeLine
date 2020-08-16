@@ -9,7 +9,7 @@ import java.util.Date;
 
 @Data
 @Entity(name = "PRODUCT_DETAIL")
-public class ProductDetail extends Base{
+public class ProductDetail extends Base {
 
     @OneToOne(cascade = CascadeType.ALL)
     ProductMaster product;

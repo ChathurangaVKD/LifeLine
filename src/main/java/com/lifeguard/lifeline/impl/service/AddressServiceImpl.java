@@ -9,11 +9,11 @@ import javax.persistence.EntityNotFoundException;
 import java.util.List;
 
 @Service
-public class AddressServiceImpl implements AddressService{
+public class AddressServiceImpl implements AddressService {
 
     private AddressRepo addressRepo;
 
-    public AddressServiceImpl(AddressRepo addressRepo){
+    public AddressServiceImpl(AddressRepo addressRepo) {
         this.addressRepo = addressRepo;
     }
 

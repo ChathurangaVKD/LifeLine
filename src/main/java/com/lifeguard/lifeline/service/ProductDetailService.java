@@ -7,7 +7,10 @@ import java.util.List;
 public interface ProductDetailService {
 
     ProductDetail create(ProductDetail productDetail);
+
     ProductDetail get(Long productId);
+
     List<ProductDetail> getAll();
+
     void delete(Long productDetailId);
 }

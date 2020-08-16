@@ -6,6 +6,6 @@ import javax.persistence.Entity;
 
 @Data
 @Entity(name = "FAX")
-public class Fax extends Base{
+public class Fax extends Base {
     String fax;
 }

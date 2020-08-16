@@ -42,9 +42,9 @@ public class MaterialMasterServiceImpl implements MaterialMasterService {
         materialMasterRepo.deleteById(materialId);
     }
 
-    private MaterialMaster persist(MaterialMaster materialMaster){
+    private MaterialMaster persist(MaterialMaster materialMaster) {
 
-        if (materialMaster.getMaterialType() != null && materialMaster.getMaterialType().getId() != null){
+        if (materialMaster.getMaterialType() != null && materialMaster.getMaterialType().getId() != null) {
             MaterialType materialType = materialTypeService.get(materialMaster.getMaterialType().getId());
             materialMaster.setMaterialType(materialType);
         }

@@ -9,7 +9,7 @@ import java.util.Date;
 
 @Data
 @Entity(name = "MATERIAL_DETAIL")
-public class MaterialDetail extends Base{
+public class MaterialDetail extends Base {
 
     @OneToOne(cascade = CascadeType.ALL)
     MaterialMaster material;
