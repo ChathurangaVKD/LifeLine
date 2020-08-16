@@ -13,8 +13,4 @@ public interface CustomerService {
     void deleteCustomer(Long customerId);
 
     List<Customer> getAllCustomer();
-
-    Customer addEmail(Long customerId, Email email);
-
-    void deleteEmail(Long customerId, Long emailId);
 }

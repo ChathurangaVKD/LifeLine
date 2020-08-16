@@ -15,6 +15,9 @@ public class Customer extends Base {
     @NaturalId
     String registerNo;
     String currency;
+    String mobileNo;
+    String email;
+    String fax;
 
     @ManyToOne(cascade = {
             CascadeType.DETACH,
@@ -26,14 +29,5 @@ public class Customer extends Base {
 
     @OneToOne(cascade = CascadeType.ALL)
     Address communicationAddress;
-
-    @OneToMany(cascade = CascadeType.ALL)
-    List<MobileNo> mobileNo = new ArrayList<>();
-
-    @OneToMany(cascade = CascadeType.ALL)
-    List<Email> email = new ArrayList<>();
-
-    @OneToMany(cascade = CascadeType.ALL)
-    List<Fax> fax = new ArrayList<>();
 
 }

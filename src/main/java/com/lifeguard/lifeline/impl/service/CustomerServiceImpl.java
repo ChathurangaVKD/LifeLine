@@ -46,21 +46,6 @@ public class CustomerServiceImpl implements CustomerService {
         return customerRepo.findAll();
     }
 
-    @Override
-    public Customer addEmail(Long customerId, Email email) {
-        Customer customer = this.getCustomer(customerId);
-        List<Email> EmailList = customer.getEmail();
-        Email email1 = emailService.create(email);
-        EmailList.add(email1);
-        customer.setEmail(EmailList);
-        return customerRepo.save(customer);
-    }
-
-    @Override
-    public void deleteEmail(Long customerId, Long emailId) {
-
-    }
-
     private Customer persist(Customer customer) {
         if (customer.getCustomerType() != null && customer.getCustomerType().getId() != null) {
             UserType userType = userTypeService.getUserTypeById(customer.getCustomerType().getId());

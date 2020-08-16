@@ -35,13 +35,13 @@ public class CustomerController {
         customerService.deleteCustomer(customerId);
     }
 
-    @PostMapping(path = "/user/{customerId}/email")
-    public Customer addEmail(@RequestBody Email email, @PathVariable("customerId") Long customerId) {
-        return customerService.addEmail(customerId, email);
-    }
-
-    @DeleteMapping(path = "/user/{customerId}/email/{emailId}")
-    public void deleteEmail(@PathVariable("emailId") Long emailId, @PathVariable("customerId") Long customerId) {
-        customerService.deleteEmail(customerId, emailId);
-    }
+//    @PostMapping(path = "/user/{customerId}/email")
+//    public Customer addEmail(@RequestBody Email email, @PathVariable("customerId") Long customerId) {
+//        return customerService.addEmail(customerId, email);
+//    }
+//
+//    @DeleteMapping(path = "/user/{customerId}/email/{emailId}")
+//    public void deleteEmail(@PathVariable("emailId") Long emailId, @PathVariable("customerId") Long customerId) {
+//        customerService.deleteEmail(customerId, emailId);
+//    }
 }
