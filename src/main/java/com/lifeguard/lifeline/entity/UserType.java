@@ -15,7 +15,11 @@ public class UserType extends Base {
     @NaturalId
     String userTypeCode;
     String userTypename;
-
-    @OneToOne(cascade = CascadeType.ALL)
-    UserPermission permission;
+    Boolean accounting;
+    Boolean costing;
+    Boolean hr;
+    Boolean inventory;
+    Boolean production;
+    Boolean quality;
+    Boolean sales;
 }
