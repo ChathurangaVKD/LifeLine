@@ -18,8 +18,8 @@ public class Employee extends Base{
     String birthDay;
     String gender;
     String password;
-    String Email email;
-    String MobileNo mobileNo;
+    String email;
+    String mobileNo;
     
     @ManyToOne(cascade = {
             CascadeType.DETACH,
