@@ -18,7 +18,9 @@ public class Employee extends Base{
     String birthDay;
     String gender;
     String password;
-
+    String Email email;
+    String MobileNo mobileNo;
+    
     @ManyToOne(cascade = {
             CascadeType.DETACH,
             CascadeType.REFRESH}, fetch = FetchType.EAGER)
@@ -26,11 +28,5 @@ public class Employee extends Base{
 
     @OneToOne(cascade = CascadeType.ALL)
     Address address;
-
-    @OneToOne(cascade = CascadeType.ALL)
-    Email email;
-
-    @OneToOne(cascade = CascadeType.ALL)
-    MobileNo mobileNo;
 
 }
