@@ -20,7 +20,7 @@ public class Employee extends Base {
     String password;
     String email;
     String mobileNo;
-    
+
     @ManyToOne(cascade = {
             CascadeType.DETACH,
             CascadeType.REFRESH}, fetch = FetchType.EAGER)

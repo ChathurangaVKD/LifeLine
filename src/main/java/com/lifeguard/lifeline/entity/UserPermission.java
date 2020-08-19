@@ -7,7 +7,7 @@ import javax.persistence.Entity;
 
 @Data
 @Entity(name = "USER_PERMISSION")
-public class UserPermission extends Base{
+public class UserPermission extends Base {
     Boolean accounting;
     Boolean costing;
     Boolean hr;
