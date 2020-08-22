@@ -2,6 +2,7 @@ package com.lifeguard.lifeline.controller;
 
 import com.lifeguard.lifeline.entity.Employee;
 import com.lifeguard.lifeline.service.EmployeeService;
+import com.lifeguard.lifeline.service.JwtUserDetailsService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -10,14 +11,16 @@ import java.util.List;
 public class EmployeeController {
 
     private EmployeeService employeeService;
+    private JwtUserDetailsService userDetailsService;
 
-    public EmployeeController(EmployeeService employeeService) {
+    public EmployeeController(EmployeeService employeeService, JwtUserDetailsService userDetailsService) {
         this.employeeService = employeeService;
+        this.userDetailsService = userDetailsService;
     }
 
     @PostMapping(path = "/user/create-employee")
     public Employee createEmployee(@RequestBody Employee employee) {
-        return employeeService.createEmployee(employee);
+        return userDetailsService.createEmployees(employee);
     }
 
     @GetMapping(path = "/user/get-employee/{employeeId}")

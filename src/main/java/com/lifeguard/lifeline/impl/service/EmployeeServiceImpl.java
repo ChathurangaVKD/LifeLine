@@ -4,6 +4,8 @@ import com.lifeguard.lifeline.entity.*;
 import com.lifeguard.lifeline.repo.EmployeeRepo;
 import com.lifeguard.lifeline.service.EmployeeService;
 import com.lifeguard.lifeline.service.UserTypeService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityNotFoundException;
@@ -14,6 +16,9 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     private EmployeeRepo employeeRepo;
     private UserTypeService userTypeService;
+
+//    @Autowired
+//    private PasswordEncoder bcryptEncoder;
 
     public EmployeeServiceImpl(EmployeeRepo employeeRepo, UserTypeService userTypeService) {
         this.employeeRepo = employeeRepo;
@@ -51,6 +56,11 @@ public class EmployeeServiceImpl implements EmployeeService {
         if (employee.getUserType() != null && employee.getUserType().getId() != null) {
             UserType userType = userTypeService.getUserTypeById(employee.getUserType().getId());
             employee.setUserType(userType);
+        }
+
+        if (employee.getPassword() != null) {
+//            UserType userType = userTypeService.getUserTypeById(employee.getUserType().getId());
+//            employee.setPassword(bcryptEncoder.encode(employee.getPassword()));
         }
 
         return employee;
