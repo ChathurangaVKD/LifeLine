@@ -18,7 +18,7 @@ public abstract class Base {
     @Transient
     private static final long serialVersionUID = -1L;
 
-    @ApiModelProperty(required = false, hidden = true)
+    @ApiModelProperty(required = false, hidden = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     Long id;
