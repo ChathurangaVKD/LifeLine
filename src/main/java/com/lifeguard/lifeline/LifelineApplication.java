@@ -42,7 +42,7 @@ public class LifelineApplication {
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/greeting-javaconfig").allowedOrigins("http://localhost:3000");
+                registry.addMapping("/user/get-all-user-type").allowedOrigins("http://localhost:3000");
             }
         };
     }
