@@ -32,13 +32,18 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
+    public List<Employee> getEmployeeByEmail(String email) {
+        return employeeRepo.getEmployeeByEmail(email);
+    }
+
+    @Override
     public void deleteEmployee(Long employeeId) {
         employeeRepo.deleteById(employeeId);
     }
 
     @Override
     public List<Employee> getAllEmployee() {
-        return null;
+        return employeeRepo.findAll();
     }
 
     private Employee persist(Employee employee) {

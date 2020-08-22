@@ -18,11 +18,8 @@ public class Customer extends Base {
     String mobileNo;
     String email;
     String fax;
-
-    @ManyToOne(cascade = {
-            CascadeType.DETACH,
-            CascadeType.REFRESH}, fetch = FetchType.EAGER)
-    UserType customerType;
+    String state;
+    String companyName;
 
     @OneToOne(cascade = CascadeType.ALL)
     Address registerAddress;

@@ -23,7 +23,7 @@ public class SupplierServiceImpl implements SupplierService {
 
     @Override
     public Supplier createSupplier(Supplier supplier) {
-        this.persist(supplier);
+//        this.persist(supplier);
         return supplierRepo.save(supplier);
     }
 
@@ -43,10 +43,10 @@ public class SupplierServiceImpl implements SupplierService {
     }
 
     private Supplier persist(Supplier supplier) {
-        if (supplier.getSupplierType() != null && supplier.getSupplierType().getId() != null) {
-            UserType userType = userTypeService.getUserTypeById(supplier.getSupplierType().getId());
-            supplier.setSupplierType(userType);
-        }
+//        if (supplier.getSupplierType() != null && supplier.getSupplierType().getId() != null) {
+//            UserType userType = userTypeService.getUserTypeById(supplier.getSupplierType().getId());
+//            supplier.setSupplierType(userType);
+//        }
 
         return supplier;
     }

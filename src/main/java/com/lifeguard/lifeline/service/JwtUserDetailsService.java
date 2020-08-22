@@ -1,7 +1,9 @@
 package com.lifeguard.lifeline.service;
 
 import java.util.ArrayList;
+import java.util.List;
 
+import com.lifeguard.lifeline.entity.Employee;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -10,6 +12,11 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class JwtUserDetailsService implements UserDetailsService {
+    private EmployeeService employeeService;
+
+    public JwtUserDetailsService(EmployeeService employeeService) {
+        this.employeeService = employeeService;
+    }
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
@@ -22,3 +29,4 @@ public class JwtUserDetailsService implements UserDetailsService {
     }
 
 }
+

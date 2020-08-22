@@ -27,7 +27,7 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public Customer createCustomer(Customer customer) {
-        this.persist(customer);
+//        this.persist(customer);
         return customerRepo.save(customer);
     }
 
@@ -47,10 +47,10 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     private Customer persist(Customer customer) {
-        if (customer.getCustomerType() != null && customer.getCustomerType().getId() != null) {
-            UserType userType = userTypeService.getUserTypeById(customer.getCustomerType().getId());
-            customer.setCustomerType(userType);
-        }
+//        if (customer.getCustomerType() != null && customer.getCustomerType().getId() != null) {
+//            UserType userType = userTypeService.getUserTypeById(customer.getCustomerType().getId());
+//            customer.setCustomerType(userType);
+//        }
 
         return customer;
     }

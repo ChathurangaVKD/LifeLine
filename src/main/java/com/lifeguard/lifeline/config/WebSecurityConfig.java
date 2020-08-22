@@ -39,12 +39,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         // configure AuthenticationManager so that it knows from where to load
         // user for matching credentials
         // Use BCryptPasswordEncoder
-        List<GrantedAuthority> authorities = new ArrayList<>();
-        authorities.add(new SimpleGrantedAuthority("SUPER_ADMIN"));
-        authorities.add(new SimpleGrantedAuthority("ADMIN"));
-        authorities.add(new SimpleGrantedAuthority("USER"));
-        authorities.add(new SimpleGrantedAuthority("READ_ONLY"));
-        auth.inMemoryAuthentication().withUser("javainuse").password("password").authorities(authorities);
         auth.userDetailsService(jwtUserDetailsService).passwordEncoder(passwordEncoder());
     }
 
@@ -62,23 +56,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
         // We don't need CSRF for this example
-//        httpSecurity.csrf().disable()
-//                // dont authenticate this particular request
-//                .authorizeRequests().antMatchers("/authenticate").permitAll().
-//                // all other requests need to be authenticated
-//                        anyRequest().authenticated().and().
-//                // make sure we use stateless session; session won't be used to
-//                // store user's state.
-//                        exceptionHandling().authenticationEntryPoint(jwtAuthenticationEntryPoint).and().sessionManagement()
-//                .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-
         httpSecurity.csrf().disable()
                 // dont authenticate this particular request
-                .authorizeRequests().antMatchers("**/swagger-ui.html#/").permitAll().and()
-                .authorizeRequests().antMatchers("**/authenticate").permitAll().
+                .authorizeRequests().antMatchers("/authenticate").permitAll().
                 // all other requests need to be authenticated
-                        anyRequest().permitAll().and().
-//                        anyRequest().authenticated().and().
+                        anyRequest().authenticated().and().
                 // make sure we use stateless session; session won't be used to
                 // store user's state.
                         exceptionHandling().authenticationEntryPoint(jwtAuthenticationEntryPoint).and().sessionManagement()

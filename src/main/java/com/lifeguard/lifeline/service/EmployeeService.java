@@ -10,6 +10,8 @@ public interface EmployeeService {
 
     Employee getEmployee(Long employeeId);
 
+    List<Employee> getEmployeeByEmail(String email);
+
     void deleteEmployee(Long employeeId);
 
     List<Employee> getAllEmployee();

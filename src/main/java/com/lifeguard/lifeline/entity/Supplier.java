@@ -19,11 +19,8 @@ public class Supplier extends Base {
     String fax;
     String currency;
     Integer creditPeriod;
-
-    @ManyToOne(cascade = {
-            CascadeType.DETACH,
-            CascadeType.REFRESH}, fetch = FetchType.EAGER)
-    UserType supplierType;
+    String state;
+    String companyName;
 
     @OneToOne(cascade = CascadeType.ALL)
     Address registerAddress;
