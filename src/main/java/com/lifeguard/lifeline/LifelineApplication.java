@@ -17,23 +17,23 @@ public class LifelineApplication {
         SpringApplication.run(LifelineApplication.class, args);
     }
 
-//    @Bean
-//    public CorsFilter corsFilter() {
-//        final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-//        final CorsConfiguration configuration = new CorsConfiguration();
-//        configuration.setAllowCredentials(true);
-//        configuration.addAllowedHeader("*");
-//        configuration.addAllowedOrigin("*");
-//        configuration.addAllowedMethod(HttpMethod.OPTIONS);
-//        configuration.addAllowedMethod(HttpMethod.GET);
-//        configuration.addAllowedMethod(HttpMethod.PUT);
-//        configuration.addAllowedMethod(HttpMethod.DELETE);
-//        configuration.addAllowedMethod(HttpMethod.HEAD);
-//        configuration.addAllowedMethod(HttpMethod.POST);
-//        configuration.addAllowedMethod(HttpMethod.PATCH);
-//        source.registerCorsConfiguration("/**", configuration);
-//        return new CorsFilter(source);
-//    }
+    @Bean
+    public CorsFilter corsFilter() {
+        final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        final CorsConfiguration configuration = new CorsConfiguration();
+        configuration.setAllowCredentials(true);
+        configuration.addAllowedHeader("*");
+        configuration.addAllowedOrigin("*");
+        configuration.addAllowedMethod(HttpMethod.OPTIONS);
+        configuration.addAllowedMethod(HttpMethod.GET);
+        configuration.addAllowedMethod(HttpMethod.PUT);
+        configuration.addAllowedMethod(HttpMethod.DELETE);
+        configuration.addAllowedMethod(HttpMethod.HEAD);
+        configuration.addAllowedMethod(HttpMethod.POST);
+        configuration.addAllowedMethod(HttpMethod.PATCH);
+        source.registerCorsConfiguration("/**", configuration);
+        return new CorsFilter(source);
+    }
 
 //    @Bean
 //    public Docket employeeApi()
