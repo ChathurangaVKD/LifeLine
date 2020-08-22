@@ -37,16 +37,6 @@ public class LifelineApplication {
         return new CorsFilter(source);
     }
 
-    @Bean
-    public WebMvcConfigurer corsConfigurer() {
-        return new WebMvcConfigurer() {
-            @Override
-            public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/user/get-all-user-type").allowedOrigins("http://localhost:3000");
-            }
-        };
-    }
-
 //    @Bean
 //    public Docket employeeApi()
 //    {
