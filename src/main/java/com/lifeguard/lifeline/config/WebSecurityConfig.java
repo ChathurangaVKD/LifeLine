@@ -67,10 +67,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                         exceptionHandling().authenticationEntryPoint(jwtAuthenticationEntryPoint).and().sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 
-        httpSecurity.httpBasic().and()
-                .authorizeRequests()
-                .antMatchers(HttpMethod.OPTIONS, "/user/get-all-user-type").permitAll()
-                .anyRequest().fullyAuthenticated();
+//        httpSecurity.httpBasic().and()
+//                .authorizeRequests()
+//                .antMatchers(HttpMethod.OPTIONS, "/user/get-all-user-type").permitAll()
+//                .anyRequest().fullyAuthenticated();
         // Add a filter to validate the tokens with every request
         httpSecurity.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
     }
