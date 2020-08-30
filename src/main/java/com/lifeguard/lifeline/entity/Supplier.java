@@ -12,7 +12,8 @@ import java.util.List;
 public class Supplier extends Base {
 
     String supplierName;
-    @NaturalId
+
+    @Column(name="registerNo", unique=true)
     String registerNo;
     String mobileNo;
     String email;
@@ -27,6 +28,7 @@ public class Supplier extends Base {
 
     @OneToOne(cascade = CascadeType.ALL)
     Address communicationAddress;
+
 
 //    @OneToMany(cascade = CascadeType.ALL)
 //    List<String> itemAssign = new ArrayList<>();

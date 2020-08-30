@@ -18,7 +18,9 @@ public class Employee extends Base {
     String birthDay;
     String gender;
     String password;
+    @Column(unique = true)
     String email;
+    @Column(unique = true)
     String mobileNo;
 
     @ManyToOne(cascade = {

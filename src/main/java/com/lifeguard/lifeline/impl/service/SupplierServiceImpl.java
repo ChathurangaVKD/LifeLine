@@ -1,5 +1,6 @@
 package com.lifeguard.lifeline.impl.service;
 
+import com.lifeguard.lifeline.entity.Base;
 import com.lifeguard.lifeline.entity.Supplier;
 import com.lifeguard.lifeline.entity.UserType;
 import com.lifeguard.lifeline.repo.SupplierRepo;
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityNotFoundException;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class SupplierServiceImpl implements SupplierService {
@@ -40,6 +42,12 @@ public class SupplierServiceImpl implements SupplierService {
     @Override
     public List<Supplier> getAllSupplier() {
         return supplierRepo.findAll();
+    }
+
+    @Override
+    public List<Supplier> getAllSuppliers(List<Supplier> suppliers) {
+        return supplierRepo.findAllById(suppliers.stream().map(Base::getId).collect(Collectors.toList()));
+
     }
 
     private Supplier persist(Supplier supplier) {

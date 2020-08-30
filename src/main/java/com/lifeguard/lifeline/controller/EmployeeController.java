@@ -33,7 +33,7 @@ public class EmployeeController {
         return employeeService.getAllEmployee();
     }
 
-    @DeleteMapping(path = "/user/delete-employee")
+    @DeleteMapping(path = "/user/delete-employee/{employeeId}")
     public void deleteEmployee(@PathVariable("employeeId") Long employeeId) {
         employeeService.deleteEmployee(employeeId);
     }

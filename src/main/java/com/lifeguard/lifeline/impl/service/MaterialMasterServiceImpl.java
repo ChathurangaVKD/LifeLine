@@ -1,10 +1,11 @@
 package com.lifeguard.lifeline.impl.service;
 
 import com.lifeguard.lifeline.entity.MaterialMaster;
-import com.lifeguard.lifeline.entity.MaterialType;
+import com.lifeguard.lifeline.entity.Supplier;
 import com.lifeguard.lifeline.repo.MaterialMasterRepo;
 import com.lifeguard.lifeline.service.MaterialMasterService;
 import com.lifeguard.lifeline.service.MaterialTypeService;
+import com.lifeguard.lifeline.service.SupplierService;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityNotFoundException;
@@ -15,16 +16,17 @@ public class MaterialMasterServiceImpl implements MaterialMasterService {
 
     private MaterialMasterRepo materialMasterRepo;
     private MaterialTypeService materialTypeService;
+    private SupplierService supplierService;
 
-    public MaterialMasterServiceImpl(MaterialMasterRepo materialMasterRepo, MaterialTypeService materialTypeService) {
+    public MaterialMasterServiceImpl(MaterialMasterRepo materialMasterRepo, MaterialTypeService materialTypeService, SupplierService supplierService) {
         this.materialMasterRepo = materialMasterRepo;
         this.materialTypeService = materialTypeService;
+        this.supplierService = supplierService;
     }
 
     @Override
     public MaterialMaster create(MaterialMaster material) {
-        this.persist(material);
-        return materialMasterRepo.save(material);
+        return materialMasterRepo.save(this.persist(material));
     }
 
     @Override
@@ -44,10 +46,7 @@ public class MaterialMasterServiceImpl implements MaterialMasterService {
 
     private MaterialMaster persist(MaterialMaster materialMaster) {
 
-        if (materialMaster.getMaterialType() != null && materialMaster.getMaterialType().getId() != null) {
-            MaterialType materialType = materialTypeService.get(materialMaster.getMaterialType().getId());
-            materialMaster.setMaterialType(materialType);
-        }
+        materialMaster.setSuppliers(supplierService.getAllSuppliers(materialMaster.getSuppliers()));
 
         return materialMaster;
     }

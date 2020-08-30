@@ -9,4 +9,6 @@ import java.util.List;
 public interface EmployeeRepo extends JpaRepository<Employee, Long> {
     @Query("select u from EMPLOYEE u where u.email = ?1")
     List<Employee> getEmployeeByEmail(String email);
+
+    List<Employee> getEmployeesByUserName(String userName);
 }

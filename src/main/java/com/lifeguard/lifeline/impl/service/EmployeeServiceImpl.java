@@ -42,6 +42,11 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
+    public List<Employee> getEmployeeByUserName(String userName) {
+        return employeeRepo.getEmployeesByUserName(userName);
+    }
+
+    @Override
     public void deleteEmployee(Long employeeId) {
         employeeRepo.deleteById(employeeId);
     }
