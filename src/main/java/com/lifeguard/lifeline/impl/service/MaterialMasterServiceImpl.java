@@ -45,6 +45,15 @@ public class MaterialMasterServiceImpl implements MaterialMasterService {
     }
 
     private MaterialMaster persist(MaterialMaster materialMaster) {
+//        List<Supplier> supplierList = null;
+//        for (int i=0; i <= materialMaster.getSuppliers().size(); i++){
+//            Supplier supplier = materialMaster.getSuppliers().get(i);
+//           supplierList.get(i).setId(supplier.getId());
+//           materialMaster.setSuppliers(supplierList);
+//           return materialMaster;
+//        }
+
+
 
         materialMaster.setSuppliers(supplierService.getAllSuppliers(materialMaster.getSuppliers()));
 

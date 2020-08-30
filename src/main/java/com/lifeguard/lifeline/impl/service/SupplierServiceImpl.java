@@ -47,7 +47,6 @@ public class SupplierServiceImpl implements SupplierService {
     @Override
     public List<Supplier> getAllSuppliers(List<Supplier> suppliers) {
         return supplierRepo.findAllById(suppliers.stream().map(Base::getId).collect(Collectors.toList()));
-
     }
 
     private Supplier persist(Supplier supplier) {

@@ -100,8 +100,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                         "/swagger-resources/**",
                         "/swagger-ui.html",
                         "/v2/api-docs"
-                ).antMatchers(HttpMethod.OPTIONS, "/*")
-                .antMatchers(HttpMethod.POST, "/authenticate");
+                )
+                .antMatchers(HttpMethod.OPTIONS, "/*")
+                .antMatchers(HttpMethod.POST, "/authenticate")
+                .antMatchers(HttpMethod.POST, "/user/create-user-type")
+                .antMatchers(HttpMethod.POST, "/user/create-employee");
+
     }
 
     @Bean
